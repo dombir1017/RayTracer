@@ -124,7 +124,9 @@ private:
         auto rayOrigin = (defocusAngle <= 0) ? centre : defocusDiskSample();
         auto rayDirection = pixelSample - rayOrigin;
 
-        return ray(rayOrigin, rayDirection);
+		auto ray_time = random_double();
+
+        return ray(rayOrigin, rayDirection, ray_time);
     }
 
     point3 defocusDiskSample() const{

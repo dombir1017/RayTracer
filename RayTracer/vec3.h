@@ -113,7 +113,7 @@ inline vec3 random_unit_vector() {
 	while (true) {
 		auto p = vec3::random(-1, 1);
 		auto lensp = p.lengthSquared();
-		if (1e-160 < lensp <= 1.0) {
+		if (1e-160 < lensp && lensp <= 1) {
 			return p / sqrt(lensp);
 		}
 	}
